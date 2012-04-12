@@ -35,7 +35,7 @@ Capistrano::Configuration.instance(:must_exist).load do
 
     task :notify_deploy_finished do
       hipchat_client[hipchat_room_name].
-        send(deploy_user, "#{human} finished deploying #{deployment_name} to #{env}.", hipchat_announce)
+        send(deploy_user, "#{human} finished deploying #{deployment_name} to #{env}/"$CAPISTRANO:HOST$, hipchat_announce)
     end
 
     def deployment_name
