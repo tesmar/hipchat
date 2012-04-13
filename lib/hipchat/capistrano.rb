@@ -24,7 +24,7 @@ Capistrano::Configuration.instance(:must_exist).load do
             send(deploy_user, "#{human} cancelled deployment of #{deployment_name} to #{env}}/test.", hipchat_announce)
         end
 
-        message = "#{human} is deploying #{deployment_name} to #{env}"
+        message = "#{human} is deploying #{deployment_name} to #{env}/test"
         message << " (with migrations)" if hipchat_with_migrations
         message << "."
 
